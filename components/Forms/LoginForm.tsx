@@ -21,6 +21,11 @@ const LoginForm: React.FC = () => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // if the user is already logged in, redirect to the dashboard page
+  if(userStore.isLoggedIn) {
+    router.push("/dashboard");
+  }
+
   const {
     register,
     handleSubmit,
@@ -64,8 +69,7 @@ const LoginForm: React.FC = () => {
         // Store token and user data in state management store
         userStore.setLoggedIn(token, fullName);
 
-        // navigate to home page
-        router.push("/") // Redirect to the home page
+        router.push("/dashboard") // Redirect to the dashboard page
 
       } else {
         // If the response is not OK, try to parse the error message from the response
