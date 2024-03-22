@@ -19,7 +19,7 @@ export const useUserStore = create<UserState>((set) => {
       : null;
   const storedFullName =
     typeof localStorage !== "undefined"
-      ? JSON.parse(localStorage.getItem("fullName") || "null")
+      ? localStorage.getItem("fullName")
       : null;
 
   set({
