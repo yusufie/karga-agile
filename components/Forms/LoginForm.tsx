@@ -23,7 +23,7 @@ const LoginForm: React.FC = () => {
 
   // if the user is already logged in, redirect to the dashboard page
   if(userStore.isLoggedIn) {
-    router.push("/dashboard");
+    router.push("/");
   }
 
   const {
@@ -69,7 +69,7 @@ const LoginForm: React.FC = () => {
         // Store token and user data in state management store
         userStore.setLoggedIn(token, fullName);
 
-        router.push("/dashboard") // Redirect to the dashboard page
+        router.push("/") // Redirect to the home page
 
       } else {
         // If the response is not OK, try to parse the error message from the response
