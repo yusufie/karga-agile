@@ -1,9 +1,8 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useUserStore } from "@/stores/userStore";
 
 const Sidebar: React.FC = () => {
-  const pathname = usePathname();
   const router = useRouter();
   const userStore = useUserStore();
 
@@ -18,7 +17,7 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <nav className="flex flex-col items-center justify-between w-16 min-h-screen bg-[#363F72]">
+    <nav className="flex flex-col items-center justify-between w-16 bg-[#363F72] min-h-[calc(100vh-4rem)]">
       <button>Sidebar</button>
       <button onClick={handleLogout}>Logout</button>
     </nav>
